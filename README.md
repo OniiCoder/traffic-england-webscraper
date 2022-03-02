@@ -1,6 +1,6 @@
 # traffic-england-webscraper
 Scrapes traffic speed information and saves as a csv file.
 
-Run the scraper by running this command
+Run the scraper by running this command:
 
 > node highway.js
