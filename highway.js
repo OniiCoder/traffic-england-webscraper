@@ -33,7 +33,6 @@ const ObjectsToCsv = require('objects-to-csv');
             });
         });
 
-        // convert string array to object
         var listIsNotEmpty = data.length > 0
         console.log(data[213]);
         var canLoop = listIsNotEmpty;
