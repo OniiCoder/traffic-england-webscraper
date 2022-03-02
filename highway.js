@@ -21,17 +21,17 @@ const ObjectsToCsv = require('objects-to-csv');
         console.log('\n\nNow we extract the table rows and columns data...');
   
         const data = await page.evaluate(() => {
-        const tds = Array.from(document.querySelectorAll('#tr-tab-content-0 table tbody tr td'))
+            const tds = Array.from(document.querySelectorAll('#tr-tab-content-0 table tbody tr td'))
 
-        console.log('\n\nNow we replace any occurences of new line characters with an arrow to indicate junction names\n\n...and we get rid of the table columns returned; that contains empty strings: "" ...');
-        // retrieve texts from table columns
-        const arr = tds.map(td => td.innerText.replace('\n', ' -> '))
+            console.log('\n\nNow we replace any occurences of new line characters with an arrow to indicate junction names\n\n...and we get rid of the table columns returned; that contains empty strings: "" ...');
+            // retrieve texts from table columns
+            const arr = tds.map(td => td.innerText.replace('\n', ' -> '))
 
-        // get rid of empty string array elements
-        return arr.filter(element => {
-            return element !== '';
-          });
-    });
+            // get rid of empty string array elements
+            return arr.filter(element => {
+                return element !== '';
+            });
+        });
 
         // convert string array to object
         var listIsNotEmpty = data.length > 0
